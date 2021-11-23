@@ -40,6 +40,9 @@ const TransactionPage = loadable(() => import(/* webpackChunkName: "TransactionP
 // Styleguide helps you to review current components and develop new ones
 const StyleguidePage = loadable(() => import(/* webpackChunkName: "StyleguidePage" */ '../containers/StyleguidePage/StyleguidePage'));
 
+// Page Mondial Relay
+const MondialRelay = loadable(() => import(/* webpackChunkName: "MondialRelay" */ '../containers/MondialRelay/MondialRelay'));
+
 
 const SearchPage = config.searchPageVariant === 'map' ? SearchPageWithMap : SearchPageWithList;
 const ListingPage = config.listingPageLayout === 'full-image' ? ListingPageFullImage : ListingPageHeroImage;
@@ -353,6 +356,11 @@ const routeConfiguration = () => {
       authPage: 'LoginPage',
       component: EmailVerificationPage,
       loadData: pageDataLoadingAPI.EmailVerificationPage.loadData,
+    },
+    {
+      path: '/mondial-relay',
+      name: 'MondialRelay',
+      component: MondialRelay,
     },
   ];
 };
